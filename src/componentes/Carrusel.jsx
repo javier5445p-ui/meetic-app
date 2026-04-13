@@ -10,13 +10,12 @@ export default function Carrusel() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const intervalo = setInterval(() => {
-      setIndex((prev) => (prev + 1) % imagenes.length);
-    }, 4000);
+  const intervalo = setInterval(() => {
+    setIndex((prev) => (prev + 1) % imagenes.length);
+  }, 3000);
 
-    return () => clearInterval(intervalo);
-  }, []);
-
+  return () => clearInterval(intervalo);
+}, [imagenes.length]);
   return (
     <div className="carrusel-hero">
       {imagenes.map((img, i) => (
